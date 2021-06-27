@@ -1,7 +1,4 @@
 # SupContrast: Supervised Contrastive Learning
-<p align="center">
-  <img src="figures/teaser.png" width="700">
-</p>
 
 Clone of the repo described below.
 Basic goals of this clone: remove dependencies on apex; demo results on fashion-mnist; demos for nlp.
