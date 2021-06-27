@@ -5,7 +5,7 @@
 
 Clone of the repo described below.
 Basic goals of this clone: remove dependencies on apex; demo results on fashion-mnist; demos for nlp.
----
+</p>
 
 This repo covers an reference implementation for the following papers in PyTorch, using CIFAR as an illustrative example:  
 (1) Supervised Contrastive Learning. [Paper](https://arxiv.org/abs/2004.11362)  
