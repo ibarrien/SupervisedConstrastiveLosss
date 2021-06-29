@@ -1,6 +1,6 @@
 from __future__ import print_function
 
-import sys
+import os, sys
 import argparse
 import time
 import math
@@ -13,6 +13,8 @@ from util import AverageMeter
 from util import adjust_learning_rate, warmup_learning_rate, accuracy
 from util import set_optimizer
 from networks.resnet_big import SupConResNet, LinearClassifier
+
+import torchutils
 
 try:
     import apex
@@ -225,6 +227,8 @@ def validate(val_loader, model, classifier, criterion, opt):
 
 
 def main():
+    torchutils.onceInit(kCUDA=True, cudadevice='cuda:0')
+
     best_acc = 0
     opt = parse_option()
 
@@ -258,4 +262,5 @@ def main():
 
 
 if __name__ == '__main__':
+    os.environ['CUDA_VISIBLE_DEVICES'] = '0'    #exclude 1 which is a Quadra
     main()
