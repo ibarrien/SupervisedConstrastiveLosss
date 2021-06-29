@@ -16,6 +16,8 @@ from util import adjust_learning_rate, warmup_learning_rate, accuracy
 from util import set_optimizer, save_model
 from networks.resnet_big import SupCEResNet
 
+import torchutils
+
 try:
     import apex
     from apex import amp, optimizers
@@ -26,7 +28,7 @@ except ImportError:
 def parse_option():
     parser = argparse.ArgumentParser('argument for training')
 
-    parser.add_argument('--print_freq', type=int, default=10,
+    parser.add_argument('--print_freq', type=int, default=200,
                         help='print frequency')
     parser.add_argument('--save_freq', type=int, default=50,
                         help='save frequency')
@@ -278,6 +280,8 @@ def validate(val_loader, model, criterion, opt):
 
 
 def main():
+    torchutils.onceInit(kCUDA=True, cudadevice='cuda:0')
+
     best_acc = 0
     opt = parse_option()
 
@@ -330,4 +334,5 @@ def main():
 
 
 if __name__ == '__main__':
+    os.environ['CUDA_VISIBLE_DEVICES'] = '0'    #exclude 1 which is a Quadra
     main()

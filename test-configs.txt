@@ -1,2 +1,5 @@
-python main_supcon.py --batch_size 1024 --learning_rate 0.5 --temp 0.5 --cosine --method SimCLR --model resnet18
+python main_ce.py --batch_size 32 --learning_rate 0.8 --cosine  --model resnet18 --print_freq 200 --epochs 20
+
+python main_supcon.py --batch_size 32 --learning_rate 0.5 --temp 0.1 --cosine --method SimCLR --model resnet18 --dataset cifar10 --print_freq 200 --epochs 20
+
 

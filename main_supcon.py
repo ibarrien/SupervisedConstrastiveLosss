@@ -17,13 +17,13 @@ from util import set_optimizer, save_model
 from networks.resnet_big import SupConResNet
 from losses import SupConLoss
 
-
+import torchutils
 
 
 def parse_option():
     parser = argparse.ArgumentParser('argument for training')
 
-    parser.add_argument('--print_freq', type=int, default=10,
+    parser.add_argument('--print_freq', type=int, default=200,
                         help='print frequency')
     parser.add_argument('--save_freq', type=int, default=50,
                         help='save frequency')
@@ -243,6 +243,8 @@ def train(train_loader, model, criterion, optimizer, epoch, opt):
 
 
 def main():
+    torchutils.onceInit(kCUDA=True, cudadevice='cuda:0')
+
     opt = parse_option()
 
     # build data loader
@@ -283,4 +285,5 @@ def main():
 
 
 if __name__ == '__main__':
+    os.environ['CUDA_VISIBLE_DEVICES'] = '0'    #exclude 1 which is a Quadra
     main()
