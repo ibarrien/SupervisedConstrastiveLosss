@@ -1,30 +1,5 @@
-python main_ce.py --batch_size 32 --learning_rate 0.8 --cosine  --model resnet18 --print_freq 200 --epochs 20
--------------------------------------------------------------------------------------------------------------
-torchutils.onceInit device = cuda:0
- * Acc@1 10.550
- * Acc@1 16.890
- * Acc@1 24.570
- * Acc@1 26.030
- * Acc@1 28.700
- * Acc@1 20.420
- * Acc@1 32.350
- * Acc@1 39.320
- * Acc@1 43.500
- * Acc@1 45.000
- * Acc@1 53.340
- * Acc@1 44.220
- * Acc@1 55.000
- * Acc@1 58.280
- * Acc@1 63.990
- * Acc@1 66.990
- * Acc@1 70.060
- * Acc@1 75.100
- * Acc@1 76.640
- * Acc@1 77.110
-best accuracy: 77.11
-
-python main_ce.py --batch_size 32 --learning_rate 0.8 --cosine  --model resnet18 --print_freq 200 --epochs 20
--------------------------------------------------------------------------------------------------------------
+main_ce.py --batch_size 32 --learning_rate 0.8 --cosine  --model resnet18 --print_freq 200 --epochs 20
+------------------------------------------------------------------------------------------------------
 torchutils.onceInit device = cuda:0
  * Acc@1 10.550
  * Acc@1 20.080
@@ -46,8 +21,37 @@ torchutils.onceInit device = cuda:0
  * Acc@1 77.440
  * Acc@1 78.340
  * Acc@1 78.830
-best accuracy: 78.83
+best accuracy: 78.83, 72-75s/epoch
 
+I ran this 3 times and got the same set of numbers.
+
+main_ce.py --batch_size 64 --learning_rate 0.8 --cosine  --model resnet18 --print_freq 200 --epochs 20
+------------------------------------------------------------------------------------------------------
+Train: [1][200/782]     BT 0.051 (0.185)        DT 0.000 (0.128)        loss 2.328 (2.783)      Acc@1 12.500 (10.477)
+Train: [1][400/782]     BT 0.045 (0.117)        DT 0.001 (0.064)        loss 2.349 (2.555)      Acc@1 4.688 (10.387)
+Train: [1][600/782]     BT 0.050 (0.095)        DT 0.000 (0.043)        loss 2.369 (2.480)      Acc@1 10.938 (10.148)
+epoch 1, total time 66.59
+Test: [0/40]    Time 7.989 (7.989)      Loss 2.1322 (2.1322)    Acc@1 15.234 (15.234)
+ * Acc@1 16.750
+ * Acc@1 29.320
+ * Acc@1 35.620
+ * Acc@1 36.940
+ * Acc@1 37.180
+ * Acc@1 36.690
+ * Acc@1 40.200
+ * Acc@1 48.830
+ * Acc@1 59.260
+ * Acc@1 57.860
+ * Acc@1 61.040
+ * Acc@1 65.500
+ * Acc@1 72.030
+ * Acc@1 73.820
+ * Acc@1 77.260
+ * Acc@1 80.000
+ * Acc@1 81.690
+ * Acc@1 84.060
+ * Acc@1 84.980
+best accuracy: 85.38, 65s/epoch
 
 ---------------
 E2
