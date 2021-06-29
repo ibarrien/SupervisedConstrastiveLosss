@@ -24,7 +24,7 @@ except ImportError:
 def parse_option():
     parser = argparse.ArgumentParser('argument for training')
 
-    parser.add_argument('--print_freq', type=int, default=10,
+    parser.add_argument('--print_freq', type=int, default=200,
                         help='print frequency')
     parser.add_argument('--save_freq', type=int, default=50,
                         help='save frequency')
@@ -48,7 +48,7 @@ def parse_option():
                         help='momentum')
 
     # model dataset
-    parser.add_argument('--model', type=str, default='resnet50')
+    parser.add_argument('--model', type=str, default='resnet18')
     parser.add_argument('--dataset', type=str, default='cifar10',
                         choices=['cifar10', 'cifar100'], help='dataset')
 

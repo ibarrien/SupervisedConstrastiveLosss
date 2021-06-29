@@ -47,7 +47,7 @@ def parse_option():
                         help='momentum')
 
     # model dataset
-    parser.add_argument('--model', type=str, default='resnet50')
+    parser.add_argument('--model', type=str, default='resnet18')
     parser.add_argument('--dataset', type=str, default='cifar10',
                         choices=['cifar10', 'cifar100', 'path'], help='dataset')
     parser.add_argument('--mean', type=str, help='mean of dataset in path in form of str tuple')
@@ -245,6 +245,7 @@ def train(train_loader, model, criterion, optimizer, epoch, opt):
 def main():
     torchutils.onceInit(kCUDA=True, cudadevice='cuda:0')
 
+    best_acc = 0
     opt = parse_option()
 
     # build data loader
