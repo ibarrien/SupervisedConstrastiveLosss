@@ -1,0 +1,108 @@
+python main_linear.py --batch_size 64 --learning_rate 5 --cosine --epochs 20 --ckpt save\SupCon\cifar10_models\SimCLR-20Eb64.pth
+
+onceInit cuda:0
+torchutils.onceInit device = cuda:0
+Files already downloaded and verified
+SupConResNet(resnet18, mlp)
+Train: [1][200/782]     BT 0.013 (0.147)        DT 0.000 (0.127)        loss 32.776 (36.377)    Acc@1 40.625 (42.922)
+Train: [1][400/782]     BT 0.013 (0.081)        DT 0.000 (0.064)        loss 34.120 (33.562)    Acc@1 53.125 (44.121)
+Train: [1][600/782]     BT 0.013 (0.058)        DT 0.000 (0.043)        loss 36.629 (33.940)    Acc@1 39.062 (44.565)
+Train epoch 1, total time 37.85, accuracy:45.25
+Test: [0/40]    Time 7.983 (7.983)      Loss 37.3275 (37.3275)  Acc@1 53.516 (53.516)
+ * Acc@1 50.380
+ * Acc@1 45.900
+ * Acc@1 50.800
+ * Acc@1 50.280
+ * Acc@1 43.980
+ * Acc@1 43.340
+ * Acc@1 50.940
+ * Acc@1 56.160
+ * Acc@1 50.860
+ * Acc@1 53.350
+ * Acc@1 54.150
+ * Acc@1 54.310
+ * Acc@1 50.020
+ * Acc@1 53.550
+ * Acc@1 58.480
+ * Acc@1 59.450
+ * Acc@1 58.490
+ * Acc@1 59.730
+ * Acc@1 61.520
+ * Acc@1 61.930
+best accuracy: 61.93, 35.5s/epoch
+-----------------------------------
+bsize=64 lr=.5
+==============
+SupConResNet(resnet18, mlp)
+ * Acc@1 45.620
+ * Acc@1 47.990
+ * Acc@1 47.360
+ * Acc@1 47.260
+ * Acc@1 51.260
+ * Acc@1 44.830
+ * Acc@1 50.420
+ * Acc@1 57.610
+ * Acc@1 50.970
+ * Acc@1 54.730
+ * Acc@1 58.000
+ * Acc@1 58.510
+ * Acc@1 60.700
+ * Acc@1 59.840
+ * Acc@1 62.080
+ * Acc@1 60.700
+ * Acc@1 61.580
+ * Acc@1 63.940
+ * Acc@1 64.900
+ * Acc@1 64.500
+best accuracy: 64.90
+
+40E:
+ * Acc@1 47.600
+ * Acc@1 47.590
+ * Acc@1 47.570
+ * Acc@1 50.930
+ * Acc@1 50.380
+ * Acc@1 44.040
+ * Acc@1 50.900
+ * Acc@1 56.770
+ * Acc@1 52.480
+ * Acc@1 54.200
+ * Acc@1 55.240
+ * Acc@1 47.860
+ * Acc@1 52.560
+ * Acc@1 47.590
+ * Acc@1 53.710
+ * Acc@1 55.260
+ * Acc@1 56.520
+ * Acc@1 59.880
+ * Acc@1 50.910
+ * Acc@1 51.460
+ * Acc@1 54.060
+ * Acc@1 57.250
+ * Acc@1 55.300
+ * Acc@1 59.090
+ * Acc@1 62.030
+ * Acc@1 58.630
+ * Acc@1 57.760
+ * Acc@1 59.560
+ * Acc@1 58.590
+ * Acc@1 58.420
+ * Acc@1 62.380
+ * Acc@1 61.970
+ * Acc@1 63.110
+ * Acc@1 63.980
+ * Acc@1 63.040
+ * Acc@1 64.540
+ * Acc@1 65.330
+ * Acc@1 65.040
+ * Acc@1 65.660
+ * Acc@1 64.900
+best accuracy: 65.66
+
+----------------------------------
+b=256
+=====
+40E:
+ * Acc@1 62.750
+ * Acc@1 61.720
+best accuracy: 62.75
