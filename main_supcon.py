@@ -159,6 +159,10 @@ def set_loader(opt):
     elif opt.dataset == 'path':
         train_dataset = datasets.ImageFolder(root=opt.data_folder,
                                             transform=TwoCropTransform(train_transform))
+    elif opt.dataset == 'fashion':
+        train_dataset = datasets.FashionMNIST(
+            root="data", train=True, transform=train_transform, download=True
+        )
     else:
         raise ValueError(opt.dataset)
 
