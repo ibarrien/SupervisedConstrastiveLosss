@@ -133,6 +133,8 @@ def set_loader(opt):
     elif opt.dataset == 'path':
         mean = eval(opt.mean)
         std = eval(opt.std)
+    elif opt.dataset == 'fashion':
+        mean, std = None, None
     else:
         raise ValueError('dataset not supported: {}'.format(opt.dataset))
     normalize = transforms.Normalize(mean=mean, std=std)
@@ -160,8 +162,16 @@ def set_loader(opt):
         train_dataset = datasets.ImageFolder(root=opt.data_folder,
                                             transform=TwoCropTransform(train_transform))
     elif opt.dataset == 'fashion':
+        train_list_transforms = [
+            transforms.RandomHorizontalFlip(),
+            transforms.ToTensor(),
+            transforms.Normalize((0.1307,), (0.3081,)),
+        ]
         train_dataset = datasets.FashionMNIST(
-            root="data", train=True, transform=train_transform, download=True
+            root=opt.data_folder,
+            train=True,  # False => TEST set (disjoint from fashion mnist train)
+            transform=transforms.Compose(train_list_transforms),
+            download=True
         )
     else:
         raise ValueError(opt.dataset)
